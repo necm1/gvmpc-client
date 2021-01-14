@@ -1,4 +1,4 @@
-export class EventManager {
+class EventManager {
   events$ = [];
 
   /**
@@ -38,3 +38,5 @@ export class EventManager {
     return this.events$;
   }
 }
+
+export default new EventManager();

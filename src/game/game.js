@@ -1,8 +1,27 @@
-import { EventManager } from "./event-manager";
-import { Storage } from "./storage";
+import EventManager from './game/event-manager';
+import Storage from './game/storage';
 
-export const eventManager = new EventManager();
-export const storage = new Storage();
+const eventManager = new EventManager();
+const storage = new Storage();
 
 // Assign events
-eventManager.add("addStorage", storage.add);
+eventManager.add('addStorage', storage.add);
+
+let browser;
+
+mp.events.add('guiReady', () => {
+  browser = mp.browsers.new('http://localhost:4200/');
+
+  mp.game.graphics.transitionToBlurred(250);
+  mp.game.ui.displayHud(false);
+  mp.game.ui.displayRadar(false);
+});
+
+mp.events.add('writeChat', (msg) => {
+  player.call('playerChat', msg);
+});
+
+mp.keys.bind(0x7b, true, () => {
+  let state = !mp.gui.cursor.visible;
+  mp.gui.cursor.show(state, state);
+});
