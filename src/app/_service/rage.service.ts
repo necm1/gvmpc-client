@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,7 @@ export class RageService {
     if (window && window['mp']) {
       this.mp = window['mp'];
       console.log('hi?');
-      console.log(this.mp.storage);
+      this.mp.trigger('addStorage', 'aDASD ASDASDASD');
     }
   }
 

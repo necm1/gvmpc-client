@@ -1,6 +1,8 @@
+import Browser from './browser';
+
 class Storage {
   add(...args) {
-    console.log(args);
+    Browser.log(args);
   }
 }
 
