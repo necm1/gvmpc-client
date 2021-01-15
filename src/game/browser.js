@@ -1,11 +1,10 @@
 class Browser {
   init() {
     this.browser = mp.browsers.new('http://localhost:4200/');
-    this.log('Initialize browser');
   }
 
-  log(msg) {
-    this.browser.execute(`window.console.log('${msg}')`);
+  execute(arg) {
+    this.browser.execute(arg);
   }
 
   add(url) {

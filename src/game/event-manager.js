@@ -13,7 +13,6 @@ class EventManager {
       handler,
     });
 
-    console.debug(`Added ${key} with ${handler}`);
     mp.events.add(key, handler.bind(this));
   }
 

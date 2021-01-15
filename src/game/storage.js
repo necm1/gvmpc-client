@@ -1,8 +1,9 @@
-import Browser from './browser';
+import Logger from './logger';
 
 class Storage {
   add(...args) {
-    Browser.log(args);
+    Logger.debug(`Added ${args[0]} with ${args[1]}`);
+    window.localStorage(args[0], args[1]);
   }
 }
 
