@@ -12,8 +12,6 @@ export class RageService {
   constructor() {
     if (window && window['mp']) {
       this.mp = window['mp'];
-      console.log('hi?');
-      this.mp.trigger('addStorage', 'aDASD ASDASDASD');
     }
   }
 
@@ -23,7 +21,7 @@ export class RageService {
    * @param key
    * @param value
    */
-  trigger(key: string, value: string | number): void {
-    this.mp.trigger(key, value);
+  trigger(key: string, ...args: any[]): void {
+    this.mp.trigger(key, args);
   }
 }

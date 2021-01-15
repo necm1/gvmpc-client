@@ -1,5 +1,11 @@
+import GuiReadyEvent from './event/gui/ready';
 class EventManager {
   events$ = [];
+
+  constructor() {
+    // GUI Events
+    this.add('guiReady', GuiReadyEvent.execute);
+  }
 
   /**
    * Add event
