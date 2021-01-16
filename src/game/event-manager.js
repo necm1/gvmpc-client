@@ -1,6 +1,6 @@
 import GuiReadyEvent from './event/gui/ready';
 class EventManager {
-  events$ = [];
+  events$ = new Map();
 
   constructor() {
     // GUI Events
@@ -14,11 +14,7 @@ class EventManager {
    * @param {void} handler
    */
   add(key, handler) {
-    this.events$.push({
-      key,
-      handler,
-    });
-
+    this.events$.set(key, handler);
     mp.events.add(key, handler.bind(this));
   }
 
@@ -28,7 +24,7 @@ class EventManager {
    * @param {string} key
    */
   remove(key) {
-    this.events$ = this.events$.filter((val) => val.key !== key);
+    this.events$.delete(key);
   }
 
   /**
@@ -37,7 +33,7 @@ class EventManager {
    * @param {string} key
    */
   get(key) {
-    return this.events$((val) => val.key === key)[0];
+    return this.events$.get(key);
   }
 
   get events() {

@@ -1,3 +1,21 @@
 :host {
-  color: red;
+  width: 25.5rem;
+  max-width: 25.5rem;
+  height: 10rem;
+  color: #fff;
+
+  & > .card {
+    background-color: transparent;
+    border: unset;
+    overflow-y: scroll;
+
+    & > .card-body {
+      background: rgb(28 29 30 / 35%);
+      border-radius: 0.2rem;
+    }
+
+    & > .card-footer {
+      border: unset;
+    }
+  }
 }
