@@ -1,10 +1,23 @@
 import GuiReadyEvent from './event/gui/ready';
+import PlayerReadyEvent from './event/player/ready';
+
+/**
+ * @class EventManager
+ */
 class EventManager {
   events$ = new Map();
 
+  /**
+   * EventManager constructor
+   *
+   * @constructor
+   */
   constructor() {
     // GUI Events
     this.add('guiReady', GuiReadyEvent.execute);
+
+    // Player
+    this.add('playerReady', PlayerReadyEvent.execute);
   }
 
   /**

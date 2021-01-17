@@ -1,14 +1,26 @@
+/**
+ * @class Browser
+ */
 class Browser {
+  /**
+   * Initialize browser
+   */
   init() {
     this.browser = mp.browsers.new('http://localhost:4200/');
+    this.voice = mp.browsers.new('');
   }
 
+  /**
+   * Execute in CEF renderer
+   *
+   * @param arg
+   */
   execute(arg) {
-    this.browser.execute(arg);
-  }
+    if (!this.browser) {
+      return;
+    }
 
-  add(url) {
-    mp.browser.new(url);
+    this.browser.execute(arg);
   }
 }
 

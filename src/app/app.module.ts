@@ -1,10 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Injector, NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {Injector, NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ChatModule } from './chat/chat.module';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {ChatModule} from './chat/chat.module';
+import {LoginModule} from './login/login.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -12,6 +13,7 @@ import { ChatModule } from './chat/chat.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     ChatModule,
+    LoginModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
