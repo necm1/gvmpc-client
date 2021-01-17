@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AuthService} from './login/service/auth.service';
 import {LoggerService} from './_service/logger.service';
 import {RageService} from './_service/rage.service';
 @Component({
@@ -6,6 +7,29 @@ import {RageService} from './_service/rage.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
+/**
+ * @class AppComponent
+ */
 export class AppComponent {
-  constructor(private rage: RageService, private logger: LoggerService) {}
+  /**
+   * AppComponent constructor
+   *
+   * @constructor
+   * @param rage
+   * @param logger
+   * @param userService
+   */
+  constructor(
+    private rage: RageService,
+    private logger: LoggerService,
+    private authService: AuthService
+  ) {}
+
+  /**
+   * @public
+   * @returns boolean
+   */
+  public get isAuthenticated(): boolean {
+    return this.authService.isAuthenticated;
+  }
 }

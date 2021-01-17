@@ -22,6 +22,10 @@ class GuiReadyEvent {
     // Disable radar
     mp.game.ui.displayRadar(false);
 
+    Logger.debug('Disabling controls & activating cursor');
+    // Disabling controls & showing cursor
+    mp.gui.cursor.show(true, true);
+
     Logger.debug('Set Discord status');
     // Set Discord Status
     mp.discord.update('German V Roleplay', 'GVMPC.net');

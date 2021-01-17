@@ -8,6 +8,9 @@ import {UserService} from 'src/app/_service/user.service';
 @Injectable({
   providedIn: 'root',
 })
+/**
+ * @class AuthService
+ */
 export class AuthService {
   constructor(
     private apiService: ApiService,

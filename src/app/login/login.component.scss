@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  width: calc(100vw - 50vw);
+
+  span {
+    color: #f14463;
+    font-weight: 600;
+  }
+}

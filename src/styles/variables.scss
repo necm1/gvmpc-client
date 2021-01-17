@@ -1,2 +1,43 @@
+// Colors
+$dark: #1c1d1e;
+$grey: #212426;
+$anchor: #f14463;
+
+// Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1200px,
+  xl: 1400px,
+);
+
+// Container
+$container-max-widths: (
+  sm: 576px,
+  md: 768px,
+  lg: 1200px,
+  xl: 1400px,
+);
+
 // Body
 $body-bg: transparent;
+
+// Card
+$card-bg: $dark;
+$card-color: #fff;
+$card-border-radius: 0;
+
+// Input
+$input-bg: $grey;
+$input-border-radius: 2px;
+$input-border-color: #1c1d20;
+$input-color: #ffffff;
+$input-focus-bg: #303235;
+$input-focus-border-color: transparent;
+$input-focus-box-shadow: unset;
+$input-focus-color: #ffffff;
+$input-disabled-bg: #292b2f;
+$input-placeholder-color: #ffffff;
+$input-font-weight: 600;
+$input-font-size: 0.9rem;

@@ -1,1 +1,55 @@
-<p>login works!</p>
+<div class="row w-100">
+  <div class="col-4 p-0">asdasdasdasd</div>
+
+  <div class="col-8 p-0">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex flex-column align-items-center text-ellipsis">
+          <ng-container *ngIf="!username; else usernameChange">
+            <h3>Willkommen auf <span>GVMPC</span>!</h3>
+          </ng-container>
+
+          <ng-template #usernameChange>
+            <h3
+              class="d-inline-flex flex-row justify-content-center text-ellipsis"
+            >
+              Willkommen
+              <span class="ml-1 text-ellipsis w-auto">{{ username }}</span
+              >!
+            </h3>
+          </ng-template>
+
+          <form class="w-100" [formGroup]="authForm" (submit)="onSubmit()">
+            <div class="mb-3">
+              <label for="username" class="form-label">Benutzername</label>
+              <input
+                type="text"
+                id="username"
+                class="form-control p-4"
+                formControlName="username"
+                required
+                autocomplete="username"
+                aria-describedby="usernameHelp"
+              />
+              <div id="usernameHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Passwort</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control p-4"
+                formControlName="password"
+                required
+                autocomplete="current-password"
+              />
+            </div>
+
+            <button class="btn btn-danger w-100 mt-2">Anmelden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

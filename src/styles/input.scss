@@ -1,0 +1,13 @@
+.form-control {
+  transition: 2s all;
+
+  &.ng-touched {
+    &.ng-invalid {
+      border: 1px solid #b41030;
+    }
+  }
+
+  &::placeholder {
+    font-weight: 600;
+  }
+}
